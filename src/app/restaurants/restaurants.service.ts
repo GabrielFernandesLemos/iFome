@@ -1,3 +1,4 @@
+import { MenuItem } from './../restaurant-detail/menu-item/menu-item.model';
 import { ErrorHandler } from './../app.error-handler';
 import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
@@ -32,4 +33,9 @@ export class RestaurantsService {
     .catch(ErrorHandler.handleError)
   }
 
+  menuOfRestaurants(id: string): Observable<MenuItem>{
+    return this.http.get(this.apiRestaurants + id + "/menu")
+    .map(response => response.json())
+    .catch(ErrorHandler.handleError)
+  }
 }
