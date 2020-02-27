@@ -1,32 +1,29 @@
+import { ErrorHandler } from './../app.error-handler';
+import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { Restaurant } from './restaurant-item/restaurant.model';
+import { Http } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/catch'
 
 @Injectable()
 export class RestaurantsService {
 
-  rests : Restaurant[] = [
-    {
-      id: "brea-bakery",
-      name: "Bread & Bakery",
-      category: "Bakery",
-      deliveryEstimate: "25m",
-      rating: 4.9,
-      imagePath: "assets/img/restaurants/breadbakery.png"
-    },
-    {
-      id: "burguer-house",
-      name: "Burguer House",
-      category: "Hamburguers",
-      deliveryEstimate: "100m",
-      rating: 3.5,
-      imagePath: "assets/img/restaurants/burgerhouse.png"
-    }
-  ]
+  apiRestaurants = environment.api + "restaurants/";  
 
-  constructor() { }
+  constructor(private http : Http) { }
 
-  restaurants(): Restaurant[] {
-    return this.rests;
+  restaurants(): Observable<Restaurant[]> {
+    return this.http.get(this.apiRestaurants)
+    .map(response => response.json())
+    .catch(ErrorHandler.handleError)
   }
+
+  restaurantsById(id: string) : Observable<Restaurant>{
+    return this.http.get(this.apiRestaurants + id)
+    .map(response => response.json())
+    .catch(ErrorHandler.handleError)
+  } 
 
 }

@@ -8,29 +8,14 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class RestaurantsComponent implements OnInit {
 
-  @Input() restaurant : Restaurant[] = [
-    {
-      id: "bread-bakery",
-      name: "Bread & Bakery",
-      category: "Bakery",
-      deliveryEstimate: "25m",
-      rating: 4.9,
-      imagePath: "assets/img/restaurants/breadbakery.png"
-    },
-    {
-      id: "burguer-house",
-      name: "Burguer House",
-      category: "Hamburguers",
-      deliveryEstimate: "100m",
-      rating: 3.5,
-      imagePath: "assets/img/restaurants/burgerhouse.png"
-    },
-  ]
+  constructor(private restaurantsService: RestaurantsService) { }
 
-  constructor(private restaurantsService : RestaurantsService) { }
+  restaurant: Restaurant[]
 
   ngOnInit() {
-    this.restaurantsService.restaurants()
+    this.restaurantsService.restaurants().
+      subscribe(
+        restaurants => this.restaurant = restaurants)
   }
 
 }
