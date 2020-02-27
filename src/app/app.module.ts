@@ -10,7 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
-import { RestaurantComponent } from './restaurants/restaurant/restaurant.component'
+import { RestaurantComponent } from './restaurants/restaurant-item/restaurant-item.component'
 
 
 @NgModule({
