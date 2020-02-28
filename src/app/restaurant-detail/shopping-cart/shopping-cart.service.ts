@@ -2,14 +2,14 @@ import { CartItem } from './card-item.model';
 import { MenuItem } from './../menu-item/menu-item.model';
 
 export class ShoppingCartService {
-    items : any[]
+    items : CartItem[] = []
 
     clear(){
         this.items = []
     }
 
     addItem(item:MenuItem){
-        let foundItem = this.items.find((mItem)=> mItem.MenuItem.id === item.id)
+        let foundItem = this.items.find((mItem)=> mItem.menuItem.id === item.id)
         if(foundItem){
             foundItem.quantity = foundItem.quantity + 1
         }else{
