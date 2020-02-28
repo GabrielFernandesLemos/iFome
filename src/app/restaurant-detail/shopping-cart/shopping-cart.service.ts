@@ -1,19 +1,29 @@
+import { CartItem } from './card-item.model';
+import { MenuItem } from './../menu-item/menu-item.model';
+
 export class ShoppingCartService {
     items : any[]
 
     clear(){
-
+        this.items = []
     }
 
-    addItem(item:any){
-
+    addItem(item:MenuItem){
+        let foundItem = this.items.find((mItem)=> mItem.MenuItem.id === item.id)
+        if(foundItem){
+            foundItem.quantity = foundItem.quantity + 1
+        }else{
+            this.items.push(new CartItem(item))
+        }
     }
 
-    removeItem(item:any){
-        
+    removeItem(item:CartItem){
+        this.items.splice(this.items.indexOf(item), 1)
     }
 
     total():number{
-        return 0
+        return this.items
+        .map(item => item.value())
+        .reduce((prev, value)=> prev+value, 0)
     }
 }
