@@ -2,7 +2,7 @@ import { Component, OnInit, Input, ContentChild, AfterContentInit } from '@angul
 import { NgModel } from '@angular/forms';
 
 @Component({
-  selector: 'mt-input',
+  selector: 'mt-input-container',
   templateUrl: './input.component.html'
 })
 export class InputComponent implements OnInit, AfterContentInit {

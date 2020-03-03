@@ -21,21 +21,21 @@
           <p class="lead">Endereço de Entrega:</p>
         </div>
         <div class="col-sm-6 col-xs-12">
-          <mt-input errorMessage="Campo obrigatório e com 5 caracteres" label="Endereço">
-            <input class="form-control" name="address" ng model required minlength="5" placeholder="Endereço"
+          <mt-input-container errorMessage="Campo obrigatório e com 5 caracteres" label="Endereço">
+            <input class="form-control" name="address" ngModel required minlength="5" placeholder="Endereço"
               autocomplete="off">
-          </mt-input>
+          </mt-input-container>
         </div>
         <div class="col-sm-2 col-xs-6">
-          <mt-input errorMessage="Número obrigatório" label="Número">
-            <input type="text" class="form-control" name="number" placeholder="Número" required ng model autocomplete="off">
-          </mt-input>
+          <mt-input-container errorMessage="Obrigatório e somente números" label="Número">
+            <input type="text" class="form-control" name="number" pattern="^[0-9]*$" placeholder="Número" required ngModel autocomplete="off">
+          </mt-input-container>
         </div>
         <div class="col-sm-4 col-xs-6">
-          <mt-input>
-            <input type="text" class="form-control" name="optional" placeholder="Complemento" ng model placeholder="Complemento"
+          <mt-input-container>
+            <input type="text" class="form-control" name="optional" placeholder="Complemento" ngModel placeholder="Complemento"
               autocomplete="off">
-          </mt-input>
+          </mt-input-container>
         </div>
       </div>
       <!-- /.row -->
