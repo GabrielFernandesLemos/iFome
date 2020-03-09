@@ -6,7 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -28,6 +28,7 @@ import { OrderItemsComponent } from './order/order-items/order-items.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { DetalheCompraComponent } from './detalhe-compra/detalhe-compra.component';
+import { RegisterService } from './register/register.service';
 
 
 @NgModule({
@@ -55,10 +56,11 @@ import { DetalheCompraComponent } from './detalhe-compra/detalhe-compra.componen
   imports: [
     BrowserModule,
     HttpModule,
+    ReactiveFormsModule,
     FormsModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [RestaurantsService, ShoppingCartService, AuthService],
+  providers: [RestaurantsService, ShoppingCartService, AuthService, RegisterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

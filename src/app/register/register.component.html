@@ -1,25 +1,25 @@
-<form>
+<form [formGroup]="form">
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Email</label>
-      <input type="email" [(ngModel)]="registerModel.email" class="form-control" id="inputEmail4" placeholder="Email">
+      <input type="email" formControlName="email" class="form-control" required id="inputEmail4" placeholder="Email">
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Senha</label>
-      <input type="password" [(ngModel)]="registerModel.password" class="form-control" id="inputPassword4" placeholder="Senha">
+      <input type="password" formControlName="password"  class="form-control"  required id="inputPassword4" placeholder="Senha">
     </div>
   </div>
-  <div class="form-group">
+  <div class="form-group col-md-12">
     <label for="inputAddress">Endereço</label>
-    <input type="text" class="form-control" [(ngModel)]="registerModel.address" id="inputAddress" placeholder="Endereço">
+    <input type="text" class="form-control" formControlName="address" required id="inputAddress" placeholder="Endereço">
   </div>
   <div class="form-row">
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-12">
       <label for="inputCity">Cidade</label>
-      <input type="text" class="form-control" [(ngModel)]="registerModel.city" id="Cidade">
+      <input type="text" class="form-control" formControlName="city"  required id="Cidade" placeholder="Cidade">
     </div>
   </div>
   <div class="form-group">
   </div>
-  <button type="submit" (click)="onSubmit()" class="btn btn-primary">Registrar-se</button>
+  <button class="col-sm-12" type="submit" (click)="onSubmit()" class="btn btn-primary btn-lg btn-block col-md-12">Registrar-se</button>
 </form>

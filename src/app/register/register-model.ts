@@ -1,11 +1,6 @@
 export class Register {
 
-    constructor(
-        name: string,
-        password: string,
-        email: string,
-        address: string,
-        city: string) { }
+    constructor() { }
 
     name: string
     password: string
