@@ -1,15 +1,23 @@
+import { RegisterService } from './register.service';
+import { Register } from './register-model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'mt-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  templateUrl: './register.component.html'
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  registerModel = new Register("", "", "", "", "");
+
+  constructor(private registerService : RegisterService ) { }
 
   ngOnInit() {
   }
+
+  onSubmit(){
+    
+  }
+
 
 }

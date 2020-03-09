@@ -1,6 +1,9 @@
 import { User } from './user-model';
 import { AuthService } from './auth.service';
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { Register } from 'app/register/register-model';
+
 
 @Component({
   selector: 'mt-login',
@@ -8,16 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService : AuthService) { }
+  userModel = new User();
 
-  private user : User = new User();
+  constructor(private authService: AuthService) {}
+
+  register: Register[]
 
   ngOnInit() {
+    
   }
 
-  makeLogin(){
-    this.authService.makeLogin(this.user)
-    console.log("have: " + this.user)
+  onSubmit(){
+    this.authService.verifyAuthUser(this.userModel.name,this.userModel.password)
+    
   }
 
 }

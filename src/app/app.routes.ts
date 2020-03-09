@@ -9,7 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { Routes } from "@angular/router";
 
 export const ROUTES: Routes = [
-    {path: '', component: HomeComponent},
+    {path: '', component: LoginComponent},
     {path: 'restaurants', component: RestaurantsComponent},
     {path: 'restaurants/:id', component: RestaurantDetailComponent,
         children: [

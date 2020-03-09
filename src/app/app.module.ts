@@ -27,6 +27,7 @@ import { RadioComponent } from './shared/radio/radio.component';
 import { OrderItemsComponent } from './order/order-items/order-items.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { DetalheCompraComponent } from './detalhe-compra/detalhe-compra.component';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { RegisterComponent } from './register/register.component';
     OrderItemsComponent,
     LoginComponent,
     RegisterComponent,
+    DetalheCompraComponent,
   ],
   imports: [
     BrowserModule,

@@ -370,5 +370,14 @@
       "restaurantId": "tasty-treats"
     }
   ],
-  "orders": []
+  "orders": [],
+  "user": [
+    {
+      "name": "Gabriel",
+      "email": "gab@abc.com",
+      "password": "1234",
+      "address": "Rua tals do vrau",
+      "city": "São paulo"
+    }
+  ]
 }
