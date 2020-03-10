@@ -370,5 +370,35 @@
       "restaurantId": "tasty-treats"
     }
   ],
-  "orders": []
+  "orders": [],
+  "user": [
+    {
+      "id": 1,
+      "name": "Gabriel",
+      "city": "São Paulo",
+      "password": "abc123",
+      "email": "askhdsak@gmail.com"
+    },
+    {
+      "email": "sdfgh",
+      "password": "asdfgh",
+      "address": "asdfggfa",
+      "city": "sdfgh",
+      "id": 2
+    },
+    {
+      "email": "gabriel_lemos03@hotmail.com",
+      "password": "1234",
+      "address": "Rua Antônio de Lotufo, 41",
+      "city": "São Paulo",
+      "id": 3
+    },
+    {
+      "email": ".,kjhgfdsdf",
+      "password": "ghjkjhgfd",
+      "address": "kjhgfdff",
+      "city": "jkjhgfd",
+      "id": 4
+    }
+  ]
 }

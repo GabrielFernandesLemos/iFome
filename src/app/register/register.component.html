@@ -1,3 +1,21 @@
-<p>
-  register works!
-</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+        <label for="email">Email</label>
+        <input type="email" formControlName="email" class="form-control" id="email" placeholder="nome@email.com">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="email">Senha</label>
+      <input type="password" formControlName="password" class="form-control" id="password" placeholder="Senha" autocomplete="on">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="email">Endereço</label>
+      <input type="text" formControlName="address" class="form-control" id="address" placeholder="Endereço">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="email">Cidade</label>
+      <input type="text" formControlName="city" class="form-control" id="cidade" placeholder="Cidade">
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg btn-block col-md-12" >Registrar-se</button>
+  </div>
+</form>

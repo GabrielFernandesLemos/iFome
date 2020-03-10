@@ -1,5 +1,5 @@
 import { User } from './user-model';
-import { AuthService } from './auth.service';
+import { LoginService } from './login.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,16 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService : AuthService) { }
+  constructor(private loginService : LoginService) { }
 
   private user : User = new User();
 
   ngOnInit() {
   }
 
-  makeLogin(){
-    this.authService.makeLogin(this.user)
-    console.log("have: " + this.user)
-  }
 
 }

@@ -1,22 +1,20 @@
-<div id="login-column" class="col-md-6">
+<div id="login-column" class="col-md-12">
   <div id="login-box" class="col-md-12">
     <form class="form" action="" method="post">
       <h3 class="text-center text-info">Login</h3>
       <div class="form-group">
         <label class="text-info">Usuário:</label><br>
-        <input type="text" [(ngModel)]="user.name" class="form-control">
+        <input type="text" class="form-control">
       </div>
       <div class="form-group">
         <label for="password" class="text-info">Senha:</label><br>
-        <input type="password" [(ngModel)]="user.password" class="form-control">
+        <input type="password" class="form-control" autocomplete="on">
       </div>
       <div class="form-group">
-        <label class="text-info"><span>Relembrar</span> <span><input id="remember-me"
-              type="checkbox"></span></label><br>
-        <button type="submit" (click)="makeLogin()" class="btn btn-danger btn-lg btn-block"> Enviar</button>
+        <button type="submit" class="btn btn-danger btn-lg btn-block"> Entrar</button>
       </div>
       <div id="register-link" class="text-right">
-        <a href="">Registre-se</a>
+        <a [routerLink]="['/register']" routerLinkActive="router-link-active" >Registre-se</a>
       </div>
     </form>
   </div>
