@@ -35,4 +35,8 @@ export class RegisterComponent implements OnInit {
     this.submitted = false;
   }
 
+  limpar(){
+    this.form.reset();
+  }
+
 }

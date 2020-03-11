@@ -32,17 +32,22 @@ export class LoginComponent implements OnInit {
 
     this.loginService.verifyAccount(obj).subscribe(
       (success: any) => {
-        if (success == true) {
-          this.login();
-        } else {
-          //console.log("Erro ao entrar")
-        }
+        this.resetForm();
+        // if (success == true) {
+        //   this.login();
+        // } else {
+        //   //console.log("Erro ao entrar")
+        // }
       }
     )
   }
 
   login() {
     this.router.navigate(['/home'])
+  }
+
+  resetForm(){
+    this.form.reset();
   }
 
 
