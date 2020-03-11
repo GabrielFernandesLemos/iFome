@@ -32,7 +32,6 @@ export class LoginComponent implements OnInit {
 
     this.loginService.verifyAccount(obj).subscribe(
       (success: any) => {
-        console.log("success: " + success)
         if (success == true) {
           this.login();
         } else {
