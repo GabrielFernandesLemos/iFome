@@ -12,7 +12,7 @@ export class LoginService {
 
   verifyAccount(obj){
     //return this.http.post(this.url + "?email=" + obj.email + "&password=" + obj.password, obj);
-    return this.http.get(this.url + "?email=" + obj.email + "&password=" + obj.password, obj)
+    return this.http.get(this.url + "?email=" + obj.email + "&password=" + obj.password)
     .map(res => this.compareObjects(JSON.stringify(res.json()), obj))
   }
 
